@@ -105,18 +105,18 @@ import pandas as pd
 import streamlit as st
 #importing the repaired dataset for further process
 #fuzzydat,fruits,vegetables,milk,rice were saved as csv in previous code session
-Main = pd.read_csv("https://raw.githubusercontent.com/AmalAmbro/Fuzzy/master/fuzzdat/fuzzydat.csv")
-fruits = pd.read_csv("https://raw.githubusercontent.com/AmalAmbro/Fuzzy/master/fuzzdat/fruits.csv")
+Main = pd.read_csv("https://github.com/AmalAmbro/Fuzzy/master/fuzzdat/fuzzydat.csv")
+fruits = pd.read_csv("https://github.com/AmalAmbro/Fuzzy/master/fuzzdat/fruits.csv")
 #We need to sort the dataset to get High rated products becomes at the top
 #this ratings were randomly generated. Based on the profit method we can change these ratings for each product for more clarified way of doing
 #eg: chillies are small quantity neede so it can be rated as 2 point or 1 point where as the potato,tomato are more needed so it can be rated as 6/7/8/9 as our wish or clients criteria
 fruits=fruits.sort_values("Points",ascending=False)
 #similarly here also
-veggies = pd.read_csv("https://raw.githubusercontent.com/AmalAmbro/Fuzzy/master/fuzzdat/vegetables.csv")
+veggies = pd.read_csv("https://github.com/AmalAmbro/Fuzzy/master/fuzzdat/vegetables.csv")
 veggies=veggies.sort_values("Points",ascending=False)
-milk = pd.read_csv("https://raw.githubusercontent.com/AmalAmbro/Fuzzy/master/fuzzdat/milk.csv")
+milk = pd.read_csv("https://github.com/AmalAmbro/Fuzzy/master/fuzzdat/milk.csv")
 milk=milk.sort_values("Points",ascending=False)
-rice = pd.read_csv("https://raw.githubusercontent.com/AmalAmbro/Fuzzy/master/fuzzdat/rice.csv")
+rice = pd.read_csv("https://github.com/AmalAmbro/Fuzzy/master/fuzzdat/rice.csv")
 rice=rice.sort_values("Points",ascending=False)
 
 #Function to get the items bought by the customer. Reads a string of a no of items bought by the customer
