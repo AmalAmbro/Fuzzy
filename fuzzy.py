@@ -235,7 +235,7 @@ st.write("""
          # Fuzzy Application
          """)
 
-Items,f,v,m,r = Items_Bought_by_Customer()
+Items,f,v,m,r = Items_Bought_by_Customer(txxt)
 F, V, M, R = fuzzy(f,v,m,r)
 a = fruit(F)
 b = vegetable(V)
