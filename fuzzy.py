@@ -122,7 +122,7 @@ rice=rice.sort_values("Points",ascending=False)
 #Function to get the items bought by the customer. Reads a string of a no of items bought by the customer
 def Items_Bought_by_Customer():
     #input("Items bought")
-    Items=txt
+    Items=txxt
     #The function get_customer_points will return the Items, fruit point, vegetables point,milk point,rice point for the customer
     Items,f,v,m,r = get_customer_points(Items)
     return Items,f,v,m,r
@@ -244,9 +244,42 @@ b = vegetable(V)
 c = milks(M)
 d = rices(R)
 #######
-while(txt != ""):
-    
-    st.write("Fuzzy system recommend you to buy")
+st.write("""
+         ### choose items from below
+         """)
+txt=[]
+frts = st.multiselect("Fruits",options=fruits["product"])
+for i in frts:
+    txt.append(i)
+vgs = st.multiselect("Vegetables", options=veggies['product'])
+for i in vgs:
+    txt.append(i)
+milkk = st.multiselect("Milk products", options=milk['product'])
+for i in milkk:
+    txt.append(i)
+rce = st.multiselect("Rice products", options = rice['product'])
+for i in rce:
+    txt.append(i)
+
+dep = st.button("Submit")
+
+txxt=[]
+if(dep):
+    txxt = ",".join(txt)
+
+Items,f,v,m,r = Items_Bought_by_Customer()
+F, V, M, R = fuzzy(f,v,m,r)
+a = fruit(F)
+b = vegetable(V)
+c = milks(M)
+d = rices(R)
+#######
+s=[]
+while(txxt != s):
+    st.write("""
+             We recommend you some of these
+             """)
+
     if(a != 0):
         st.write("""
                  ## Fruits
