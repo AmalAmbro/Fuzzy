@@ -120,9 +120,9 @@ rice = pd.read_csv("fuzzdat/rice.csv")
 rice=rice.sort_values("Points",ascending=False)
 
 #Function to get the items bought by the customer. Reads a string of a no of items bought by the customer
-def Items_Bought_by_Customer():
+def Items_Bought_by_Customer(t):
     #input("Items bought")
-    Items=txxt
+    Items=t
     #The function get_customer_points will return the Items, fruit point, vegetables point,milk point,rice point for the customer
     Items,f,v,m,r = get_customer_points(Items)
     return Items,f,v,m,r
@@ -265,7 +265,7 @@ txxt=[]
 if(dep):
     txxt = ",".join(txt)
 
-Items,f,v,m,r = Items_Bought_by_Customer()
+Items,f,v,m,r = Items_Bought_by_Customer(txxt)
 F, V, M, R = fuzzy(f,v,m,r)
 a = fruit(F)
 b = vegetable(V)
