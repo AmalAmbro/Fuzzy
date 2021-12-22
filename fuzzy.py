@@ -235,8 +235,6 @@ st.write("""
          # Fuzzy Application
          """)
 
-txt = st.text_input("Items bought by the customer")
-
 Items,f,v,m,r = Items_Bought_by_Customer()
 F, V, M, R = fuzzy(f,v,m,r)
 a = fruit(F)
